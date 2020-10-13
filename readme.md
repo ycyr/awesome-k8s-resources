@@ -26,7 +26,7 @@ Idea taken from [donnemartin/awesome-aws](https://github.com/donnemartin/awesome
   - [Storage](#storage)
   - [Testing and Troubleshooting](#testing-and-troubleshooting)
   - [Monitoring, Alerts, and Visualization](#monitoring-alerts-and-visualization)
-  - [Backup and Diaster Recovery](#backup-and-diaster-recovery)
+  - [Backup and Restore](#backup-and-restore)
   - [Security and Compliance](#security-and-compliance)
   - [Service Mesh](#service-mesh)
   - [Development Tools](#development-tools)
@@ -34,9 +34,8 @@ Idea taken from [donnemartin/awesome-aws](https://github.com/donnemartin/awesome
   - [Miscellaneous](#miscellaneous)
 - [Guides, Documentations, Blogs, and Learnings](#guides-documentations-blogs-and-learnings)
   - [Guides](#guides)
-  - [Documentations](#documentations)
   - [Blogs and Videos](#blogs-and-videos)
-  - [Learnings](#learnings)
+  - [Learnings and Documentations](#learnings-and-documentations)
 - [Contribute](#contribute)
 - [License](#license)
 
@@ -57,14 +56,12 @@ Items with :green_heart: indicate open source projects.
 - :green_heart:[Kubetail](https://github.com/johanhaleby/kubetail) :fire::fire::fire::fire: - Bash script that enables you to aggregate (tail/follow) logs from multiple pods into one stream.
 - :green_heart:[stern](https://github.com/wercker/stern) :fire::fire::fire::fire::fire: - Stern allows you to tail multiple pods on Kubernetes and multiple containers within the pod.
 - :green_heart:[kubectl tree](https://github.com/ahmetb/kubectl-tree) :fire::fire::fire::fire: - A kubectl plugin to explore ownership relationships between Kubernetes objects through owners.
-- :green_heart:[popeye](https://popeyecli.io/) :fire::fire::fire::fire::fire: - Popeye is a utility that scans live Kubernetes cluster and reports potential issues with deployed resources and configurations.
-- :green_heart:[kube-capacity](https://github.com/robscott/kube-capacity) :fire::fire::fire: - This is a simple CLI that provides an overview of the resource requests, limits, and utilization in a Kubernetes cluster.
-- :green_heart:[kube-score](https://github.com/zegl/kube-score) :fire::fire::fire: - `kube-score` is a tool that performs static code analysis of your Kubernetes object definitions.
-- :green_heart:[rakkess](https://github.com/corneliusweig/rakkess) :fire::fire::fire: - kubectl plugin to show an access matrix for server resources
+- :green_heart:[nova](https://github.com/FairwindsOps/nova/) - Nova scans your cluster for installed Helm charts, then cross-checks them against all known Helm repositories.
 
 ### Cluster Provisioning
 - :green_heart:[kind](https://github.com/kubernetes-sigs/kind) :fire::fire::fire::fire::fire: - kind is a tool for running local Kubernetes clusters using Docker container "nodes".
 - :green_heart:[k3s](https://github.com/rancher/k3s) :fire::fire::fire::fire::fire: - Lightweight Kubernetes. Easy to install, half the memory, all in a binary less than 100 MB.
+- :green_heart:[k3d](https://github.com/rancher/k3d) :fire::fire::fire::fire: - k3d, like kind, is a tool for running local k3s clusters in docker. It's a single binary about 20 MB. You need to have docker installed.
 - :green_heart:[eksctl](https://github.com/weaveworks/eksctl) :fire::fire::fire::fire::fire: - `eksctl` is a simple CLI tool for creating clusters on EKS - Amazon's new managed Kubernetes service for EC2.
 - :green_heart:[kubespray](https://github.com/kubernetes-sigs/kubespray) :fire::fire::fire::fire::fire: - Deploy a production ready Kubernetes cluster
 - :green_heart:[kops](https://github.com/kubernetes/kops) :fire::fire::fire::fire::fire: - `kops` helps you create, destroy, upgrade and maintain production-grade, highly available, Kubernetes clusters from the command line.
@@ -75,6 +72,8 @@ Items with :green_heart: indicate open source projects.
 
 ### Automation and CI/CD
 - :green_heart:[Flux](https://github.com/fluxcd/flux) :fire::fire::fire::fire::fire: - Flux is a tool that automatically ensures that the state of a cluster matches the config in git.
+- :green_heart:[Argo CD](https://github.com/argoproj/argo-cd) :fire::fire::fire::fire::fire: - Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
+- :green_heart:[Argo Rollouts](https://github.com/argoproj/argo-rollouts) :fire::fire::fire: - Argo Rollouts controller, uses the Rollout custom resource to provide additional deployment strategies such as Blue Green and Canary to Kubernetes.
 - :green_heart:[Helm Operator](https://github.com/fluxcd/helm-operator) :fire::fire: - The Helm Operator is a Kubernetes operator, allowing one to declaratively manage Helm chart releases.
 - :green_heart:[Flagger](https://github.com/weaveworks/flagger) :fire::fire::fire::fire::fire: - Flagger is a progressive delivery tool that automates the release process for applications running on Kubernetes.
 - :green_heart:[Argo Workflows](https://github.com/argoproj/argo) :fire::fire::fire::fire::fire: - Argo Workflows is an open source container-native workflow engine for orchestrating parallel jobs on Kubernetes.
@@ -83,11 +82,15 @@ Items with :green_heart: indicate open source projects.
 - :green_heart:[Skaffold](https://github.com/GoogleContainerTools/skaffold) :fire::fire::fire::fire::fire: - Skaffold is a command line tool that facilitates continuous development for Kubernetes applications.
 - :green_heart:[Apollo](https://github.com/logzio/apollo) :fire::fire: - Apollo is a simple, lightweight, Continuous Deployment (CD) solution on top of Kubernetes.
 - :green_heart:[Spinnaker](https://github.com/spinnaker/spinnaker) :fire::fire::fire::fire::fire: - Spinnaker is an open-source continuous delivery platform for releasing software changes with high velocity and confidence.
+- :green_heart:[Argo Events](https://github.com/argoproj/argo-events) :fire::fire::fire: - Argo Events is an event-driven workflow automation framework for Kubernetes which helps you trigger K8s objects, Argo Workflows, Serverless workloads, etc.
+- :green_heart:[Reloader](https://github.com/stakater/Reloader) :fire::fire::fire::fire: - Reloader can watch changes in `ConfigMap` and `Secret` and do rolling upgrades on Pods with their associated `DeploymentConfigs`, `Deployments`, `Daemonsets` and `Statefulsets`. 
 
 ### Cluster Resources Management
 - :green_heart:[Kruise](https://github.com/openkruise/kruise) :fire::fire::fire::fire: - Kruise consists of several controllers which extend and complement the Kubernetes core controllers for workload management.
 - :green_heart:[Grafana Tanka](https://github.com/grafana/tanka) :fire::fire::fire: - The clean, concise and super flexible alternative to YAML for your Kubernetes cluster.
 - :green_heart:[KubeDirector](https://github.com/bluek8s/kubedirector) :fire::fire: - KubeDirector uses standard Kubernetes (K8s) facilities of custom resources and API extensions to implement stateful scaleout application clusters.
+- :green_heart:[The Hierarchical Namespace Controller](https://github.com/kubernetes-sigs/multi-tenancy/tree/master/incubator/hnc) :fire::fire::fire: - Hierarchical namespaces make it easier to share your cluster by making namespaces more powerful.
+- :green_heart:[Kubenav](https://github.com/kubenav/kubenav) :fire::fire::fire: - kubenav is the navigator for your Kubernetes clusters right in your pocket.
 
 ### Secrets Management
 - :green_heart:[Kubernetes External Secrets](https://github.com/godaddy/kubernetes-external-secrets) :fire::fire::fire: - Kubernetes External Secrets allows you to use external secret management systems, like AWS Secrets Manager or HashiCorp Vault, to securely add secrets in Kubernetes.
@@ -122,6 +125,10 @@ Items with :green_heart: indicate open source projects.
 - :green_heart:[Conftest](https://github.com/open-policy-agent/conftest) :fire::fire::fire::fire: - Conftest helps you write tests against structured configuration data.
 - :green_heart:[chaoskube](https://github.com/linki/chaoskube) :fire::fire::fire::fire: - `chaoskube` periodically kills random pods in your Kubernetes cluster.
 - :green_heart:[Chaos Mesh](https://github.com/pingcap/chaos-mesh) :fire::fire::fire::fire: - Chaos Mesh® is a cloud-native Chaos Engineering platform that orchestrates chaos on Kubernetes environments.
+- :green_heart:[popeye](https://popeyecli.io/) :fire::fire::fire::fire::fire: - Popeye is a utility that scans live Kubernetes cluster and reports potential issues with deployed resources and configurations.
+- :green_heart:[kube-score](https://github.com/zegl/kube-score) :fire::fire::fire: - `kube-score` is a tool that performs static code analysis of your Kubernetes object definitions.
+- :green_heart:[KubeInvaders](https://github.com/lucky-sideburn/KubeInvaders) :fire::fire::fire: - Through KubeInvaders you can stress Kubernetes cluster in a fun way and check how it is resilient.
+- :green_heart:[Kube DOOM](https://github.com/storax/kubedoom) :fire::fire::fire::fire: - The next level of chaos engineering is here! Kill pods inside your Kubernetes cluster by shooting them in Doom!
 
 ### Monitoring, Alerts, and Visualization
 - :green_heart:[Prometheus](https://github.com/prometheus/prometheus) :fire::fire::fire::fire::fire: - Prometheus, a Cloud Native Computing Foundation project, is a systems and service monitoring system.
@@ -139,9 +146,12 @@ Items with :green_heart: indicate open source projects.
 - :green_heart:[kubewatch](https://github.com/bitnami-labs/kubewatch) :fire::fire::fire::fire: - `kubewatch` is a Kubernetes watcher that currently publishes notification to available collaboration hubs/notification channels.
 - :green_heart:[Sloop](https://github.com/salesforce/sloop) :fire::fire::fire: - Sloop monitors Kubernetes, recording histories of events and resource state changes and providing visualizations to aid in debugging past events.
 - :green_heart:[BotKube](https://github.com/infracloudio/botkube) :fire::fire::fire: - BotKube integration with Slack or Mattermost helps you monitor your Kubernetes cluster, debug critical deployments and gives recommendations for standard practices by running checks on the Kubernetes resources.
+- :green_heart:[kube-capacity](https://github.com/robscott/kube-capacity) :fire::fire::fire: - This is a simple CLI that provides an overview of the resource requests, limits, and utilization in a Kubernetes cluster.
+- :green_heart:[Lens](https://github.com/lensapp/lens) :fire::fire::fire::fire::fire: - Lens it's an useful, attractive, open source user interface (UI) for working with Kubernetes clusters.
 
-### Backup and Diaster Recovery
+### Backup and Restore
 - :green_heart:[katafygio](https://github.com/bpineau/katafygio) :fire: - katafygio discovers Kubernetes objects (deployments, services, ...), and continuously save them as yaml files in a git repository.
+- :green_heart:[Velero](https://github.com/vmware-tanzu/velero) :fire::fire::fire::fire::fire: - Velero (formerly Heptio Ark) gives you tools to back up and restore your Kubernetes cluster resources and persistent volumes.
 
 ### Security and Compliance
 - :green_heart:[kube-bench](https://github.com/aquasecurity/kube-bench) :fire::fire::fire::fire::fire: - kube-bench is a Go application that checks whether Kubernetes is deployed securely by running the checks documented in the CIS Kubernetes Benchmark.
@@ -150,12 +160,16 @@ Items with :green_heart: indicate open source projects.
 - :green_heart:[kube-hunter](https://github.com/aquasecurity/kube-hunter) :fire::fire::fire::fire::fire: - kube-hunter hunts for security weaknesses in Kubernetes clusters.
 - [Kube-Scan](https://github.com/octarinesec/kube-scan) :fire::fire: - Kube-Scan gives a risk score, from 0 (no risk) to 10 (high risk) for each workload.
 - :green_heart:[Permission manager](https://github.com/sighupio/permission-manager) :fire::fire::fire: - Permission Manager is an application developed by SIGHUP that enables a super-easy and user-friendly RBAC management for Kubernetes.
-
+- :green_heart:[rakkess](https://github.com/corneliusweig/rakkess) :fire::fire::fire: - kubectl plugin to show an access matrix for server resources
+- :green_heart:[k-rail](https://github.com/cruise-automation/k-rail) :fire::fire: - k-rail is a workload policy enforcement tool for Kubernetes. It can help you secure a multi tenant cluster with minimal disruption and maximum velocity.
+- :green_heart:[Falco](https://github.com/falcosecurity/falco) :fire::fire::fire::fire::fire: - Falco is a behavioral activity monitor designed to detect anomalous activity in your applications. You can use Falco to monitor run-time security of your Kubernetes applications and internal components.
+  
 ### Service Mesh
 - :green_heart:[Istio](https://github.com/istio/istio) :fire::fire::fire::fire::fire: - An open platform to connect, manage, and secure microservices.
-- :green_heart:[Linkderd](https://github.com/linkerd/linkerd) :fire::fire::fire::fire::fire: - Linkerd is a transparent service mesh, designed to make modern applications safe and sane.
+- :green_heart:[Linkerd](https://github.com/linkerd/linkerd) :fire::fire::fire::fire::fire: - Linkerd is a transparent service mesh, designed to make modern applications safe and sane.
 - [Consul](https://www.hashicorp.com/products/consul/multi-platform-service-mesh/) - HashiCorp's service mesh service that is infrastructure agnostic.
-- [AWS App Mesh](https://aws.amazon.com/app-mesh/) - A service mesh service offered by AWS that works on AWS infrastructure services such as EKS and Fargate. 
+- [AWS App Mesh](https://aws.amazon.com/app-mesh/) - A service mesh service offered by AWS that works on AWS infrastructure services such as EKS and Fargate.
+- :green_heart:[Open Service Mesh](https://github.com/openservicemesh/osm/) :fire::fire::fire::fire: - Open Service Mesh (OSM) is a lightweight, extensible, Cloud Native service mesh that allows users to uniformly manage, secure, and get out-of-the-box observability features for highly dynamic microservice environments.
 
 ### Development Tools
 - :green_heart:[Telepresence](https://github.com/telepresenceio/telepresence) :fire::fire::fire::fire::fire: - Telepresence provides fast, realistic local development for Kubernetes microservices.
@@ -166,6 +180,7 @@ Items with :green_heart: indicate open source projects.
 - :green_heart:[ko](https://github.com/google/ko) :fire::fire::fire::fire: - `ko` is a tool for building and deploying Golang applications to Kubernetes.
 - :green_heart:[Makisu](https://github.com/uber/makisu) :fire::fire::fire::fire::fire: - Makisu is a fast and flexible Docker image build tool designed for unprivileged containerized environments such as Mesos or Kubernetes.
 - :green_heart:[Tye](https://github.com/dotnet/tye) :fire::fire::fire::fire: - Tye is a developer tool that makes developing, testing, and deploying microservices and distributed applications easier.
+- :green_heart:[kubectl-warp](https://github.com/ernoaapa/kubectl-warp) :fire::fire: - Kubernetes CLI plugin for syncing and executing local files in Pod on Kubernetes
 
 ### Data Processing and Machine Learning
 - :green_heart:[Volcano](https://github.com/volcano-sh/volcano) :fire::fire::fire: - Volcano is a batch system built on Kubernetes.
@@ -181,24 +196,26 @@ Items with :green_heart: indicate open source projects.
 - :green_heart:[Kubeless](https://github.com/kubeless/kubeless) :fire::fire::fire::fire::fire: - `kubeless` is a Kubernetes-native serverless framework that lets you deploy small bits of code without having to worry about the underlying infrastructure plumbing.
 - :green_heart:[Agones](https://github.com/googleforgames/agones) :fire::fire::fire::fire::fire: - Agones is a library for hosting, running and scaling dedicated game servers on Kubernetes.
 - :green_heart:[Shell-operator](https://github.com/flant/shell-operator) :fire::fire::fire: - Shell-operator is a tool for running event-driven scripts in a Kubernetes cluster.
+- :green_heart:[Kubecost](https://github.com/kubecost/cost-model) :fire::fire::fire: - Kubecost models give teams visibility into current and historical Kubernetes spend and resource allocation.
+- :green_heart:[KubePug](https://github.com/rikatz/kubepug) :fire: - A tool to check deprecations before upgrading Kubernetes version
+- :green_heart:[AWS Controllers for Kubernetes](https://github.com/aws/aws-controllers-k8s) :fire::fire::fire::fire: - AWS Controllers for Kubernetes (ACK) lets you define and use AWS service resources directly from Kubernetes.
 
 ## Guides, Documentations, Blogs, and Learnings
 
 ### Guides
 - [A Beginner’s Guide to Kubernetes](https://medium.com/containermind/a-beginners-guide-to-kubernetes-7e8ca56420b6) - A comprehensive introduction to Kubernetes architecture
 - [The Illustrated Children’s Guide to Kubernetes](https://www.cncf.io/the-childrens-illustrated-guide-to-kubernetes/) - Graphical explanations of Kubernetes
-- :green_heart:[Kubernetes The Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way) :fire::fire::fire::fire::fire: - Kubernetes The Hard Way guides you through bootstrapping a highly available Kubernetes cluster with end-to-end encryption between components and RBAC authentication.
+- [Kubernetes The Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way) - Kubernetes The Hard Way guides you through bootstrapping a highly available Kubernetes cluster with end-to-end encryption between components and RBAC authentication.
 - [Troubleshooting Kubernetes deployments](https://learnk8s.io/a/troubleshooting-kubernetes.pdf) - A flow chart to troubleshoot a kubernetes deployment in case of issues
 - [A Guide to the Kubernetes Networking Model](https://sookocheff.com/post/kubernetes/understanding-kubernetes-networking-model/) - A in-depth run-through of Kubernetes networking
-- [How to deploy a production-grade Kubernetes cluster on AWS](https://gruntwork.io/guides/kubernetes/how-to-deploy-production-grade-kubernetes-cluster-aws/#use-eks) - This guide will walk you through the process of configuring a production-grade Kubernetes cluster on AWS.
+- [Writing Your First Kubernetes Operator](https://medium.com/faun/writing-your-first-kubernetes-operator-8f3df4453234) - In this article, we’ll see how to build and deploy your first Kubernetes Operator using the Operator SDK.
+- [Production grade Kubernetes Monitoring using Prometheus](https://medium.com/faun/production-grade-kubernetes-monitoring-using-prometheus-78144b835b60) - A in-depth guide to deploy Prometheus monitoring solution.
+- [Configuring HA Kubernetes cluster on bare metal servers with kubeadm](https://medium.com/faun/configuring-ha-kubernetes-cluster-on-bare-metal-servers-with-kubeadm-1-2-1e79f0f7857b) - A guide to standing up a HA Kubernetes cluster on bare metal servers with kubeadm.
+- [Introduction to Using Google Kubernetes Engine; Explain Like I’m Five!](https://medium.com/faun/google-kubernetes-engine-explain-like-im-five-1890e550c099) - Creating your first managed Kubernetes cluster on Google Kubernetes Engine using Terraform.
 - [Amazon EKS Best Practices Guide for Security](https://aws.github.io/aws-eks-best-practices/) - This guide provides advice about protecting information, systems, and assets that are reliant on EKS while delivering business value through risk assessments and mitigation strategies.
 - [Amazon EKS Node Drainer](https://github.com/aws-samples/amazon-k8s-node-drainer) - A guide and an example to cordon and evict all evictable pods from an EC2 node being terminated.
-- [Amazon EKS Workshop](https://www.eksworkshop.com/) - A comprehensive guide and list of tutorials to work with Amazon EKS.
-- [Moduler and Scalable Amazon EKS Architecture](https://s3.amazonaws.com/aws-quickstart/quickstart-amazon-eks/doc/amazon-eks-architecture.pdf) - A deployment guide that provides step-by-step instructions for deploying Amazon EKS clusters. 
-
-### Documentations
-- [Kubernetes API Reference Docs](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/)
-- [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) - `kubectl` cheat sheet
+- [Kubernetes Working Group for Multi-Tenancy](https://github.com/kubernetes-sigs/multi-tenancy) - This is a working place for multi-tenancy related proposals and prototypes.
+- [Kubernetes Network Policy Recipes](https://github.com/ahmetb/kubernetes-network-policy-recipes) - This repository contains various use cases of Kubernetes Network Policies and sample YAML files to leverage in your setup.
 
 ### Blogs and Videos
 - [10 most common mistakes using kubernetes](https://blog.pipetail.io/posts/2020-05-04-most-common-mistakes-k8s/)
@@ -206,8 +223,13 @@ Items with :green_heart: indicate open source projects.
 - [Kubernetes at Reddit: Tales from Production](https://youtu.be/WTbIBqNcjoQ)
 - [Life of a Packet](https://www.youtube.com/watch?v=0Omvgd7Hg1I)
 - [How the Department of Defense Moved to Kubernetes and Istio](https://www.youtube.com/watch?v=YjZ4AZ7hRM0)
+- [OPA Deep Dive](https://www.youtube.com/watch?v=Uj2N9S58GLU)
+- [Kubernetes Failure Stories](https://github.com/hjacobs/kubernetes-failure-stories)
+- [Service Mesh Comparison](https://servicemesh.es/)
 
-### Learnings
+### Learnings and Documentations
+- [Kubernetes API Reference Docs](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/)
+- [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 - [Katacoda](https://www.katacoda.com/courses/kubernetes/playground) - This is a Kubernetes playground, a safe place designed for experimenting, exploring and learning Kubernetes.
 - [Play with Kubernetes](https://labs.play-with-k8s.com/) - Play with Kubernetes is a playground which allows users to run K8s clusters in a matter of seconds.
 - [Learn Kubernetes Basics](https://kubernetes.io/docs/tutorials/kubernetes-basics/) - This tutorial provides a walkthrough of the basics of the Kubernetes cluster orchestration system.
@@ -219,8 +241,12 @@ Items with :green_heart: indicate open source projects.
 - [Example: Deploying WordPress and MySQL with Persistent Volumes](https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/) - This tutorial shows you how to deploy a WordPress site and a MySQL database using Minikube.
 - [Example: Deploying Cassandra with a StatefulSet](https://kubernetes.io/docs/tutorials/stateful-application/cassandra/) - This tutorial shows you how to run Apache Cassandra on Kubernetes. Cassandra, a database, needs persistent storage to provide data durability.
 - [Running ZooKeeper, A Distributed System Coordinator](https://kubernetes.io/docs/tutorials/stateful-application/zookeeper/) - This tutorial demonstrates running Apache Zookeeper on Kubernetes using StatefulSets, PodDisruptionBudgets, and PodAntiAffinity.
-- [Set Up a CI/CD Pipeline with Kubernetes](https://www.linux.com/audience/enterprise/set-cicd-pipeline-kubernetes-part-1-overview/) - A end-to-end guide to set up a CI/CD Pipeline with Kuebernetes
-
+- [Set Up a CI/CD Pipeline with Kubernetes](https://www.linux.com/audience/enterprise/set-cicd-pipeline-kubernetes-part-1-overview/) - A end-to-end guide to set up a CI/CD Pipeline with Kubernetes.
+- [How to pass the Certified Kubernetes Administrator (CKA) exam on the first attempt](https://medium.com/faun/how-to-pass-certified-kubernetes-administrator-cka-exam-on-first-attempt-36c0ceb4c9e) - A guide to pass CKA exam
+- [Webinar: K8s with OPA Gatekeeper](https://www.youtube.com/watch?v=v4wJE3I8BYM)
+- [Kubectl Kubernetes CheatSheet](https://github.com/dennyzhang/cheatsheet-kubernetes-A4) - A cheatsheet containing many helpful kubectl commands
+- [Ready-to-use commands and tips for kubectl](https://medium.com/flant-com/kubectl-commands-and-tips-7b33de0c5476)
+- [Certified Kubernetes Security Specialist - CKSS](https://github.com/ijelliti/CKSS-Certified-Kubernetes-Security-Specialist) - This repository is a collection of resources to prepare for the Certified Kubernetes Security Specialist (CKSS) exam.
 
 ## Contribute
 
